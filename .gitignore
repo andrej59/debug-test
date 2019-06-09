@@ -2,8 +2,6 @@
 
 /.idea
 *.iml
-datasource.properties
-datasource.yaml
 
 .classpath
 .project
