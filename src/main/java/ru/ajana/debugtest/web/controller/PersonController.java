@@ -3,6 +3,7 @@ package ru.ajana.debugtest.web.controller;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,7 +46,7 @@ public class PersonController {
 
   @PostMapping
   public ResponseEntity createPerson(@RequestBody Person person) {
-    return ResponseEntity.ok(personService.create(person));
+    return ResponseEntity.status(HttpStatus.CREATED).body(personService.create(person));
   }
 
   @PutMapping

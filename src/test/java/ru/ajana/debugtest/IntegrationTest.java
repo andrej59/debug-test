@@ -78,6 +78,7 @@ public abstract class IntegrationTest extends AbstractTest {
     return restClient;
   }
 
+
   /**
    * Возвращает заголовки отправляемые по умолчанию.
    *
@@ -127,7 +128,7 @@ public abstract class IntegrationTest extends AbstractTest {
   }
 
   /**
-   * Выполняет HTTP-запрос методом GET.
+   * Выполняет Http-запрос методом GET.
    *
    * @param path относительный путь по отношению к базовому URI
    * @param httpEntity отправляемая сущность
@@ -154,6 +155,21 @@ public abstract class IntegrationTest extends AbstractTest {
     return getClient()
         .exchange(getBaseURI() + path, HttpMethod.GET, buildRequest(), responseType,
             urlVariables);
+  }
+
+  /**
+   * Выполняет Http-запрос методом POST.
+   *
+   * @param path относительный путь по отношению к базовому URI
+   * @param httpEntity отправляемая сущность
+   * @param responseType возвращаемый класс данных
+   * @param <T> тип возвращаемых данных
+   * @return результат запроса
+   */
+  protected <T> ResponseEntity<T> post(String path,
+      HttpEntity httpEntity,
+      Class<T> responseType) {
+    return getClient().exchange(getBaseURI() + path, HttpMethod.POST, httpEntity, responseType);
   }
 
   /**

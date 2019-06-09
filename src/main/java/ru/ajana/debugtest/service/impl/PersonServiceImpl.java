@@ -59,10 +59,30 @@ public class PersonServiceImpl implements PersonService {
    */
   @Override
   public Person create(Person person) {
-    Objects.requireNonNull(person, "The argument person must not be null");
+    checkPerson(person);
+
     PersonEntity personEntity = personRepository.save(personMapper.mapFrom(person));
     person.setId(personEntity.getId());
     return person;
+  }
+
+  /**
+   * Сложный алгоритм проверки.
+   *
+   * @param person объект ФЛ для проверки.
+   */
+  private boolean checkPerson(Person person) {
+    Objects.requireNonNull(person, "The argument person must not be null");
+
+    StringBuilder initialsPerson = new StringBuilder(person.getLastName());
+    initialsPerson.append(" ")
+        .append(person.getFirstName().substring(0, 1)).append(".")
+        .append(person.getMiddleName().substring(0, 1)).append(".");
+
+    if (initialsPerson.length() > 120) {
+      throw new IllegalArgumentException("Значение превышает 120 символов");
+    }
+    return true;
   }
 
   /**
