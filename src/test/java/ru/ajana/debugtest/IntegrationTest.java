@@ -88,7 +88,6 @@ public abstract class IntegrationTest extends AbstractTest {
     headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
     headers.setContentType(MediaType.APPLICATION_JSON_UTF8);
     return headers;
-
   }
 
   /**
