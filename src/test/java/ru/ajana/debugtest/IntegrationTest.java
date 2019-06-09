@@ -26,7 +26,6 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
-import ru.ajana.debugtest.web.Application;
 
 /**
  * Абстрактный интеграционных тестов.
@@ -38,7 +37,7 @@ import ru.ajana.debugtest.web.Application;
     "classpath:datasource-test.properties"})
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @SqlConfig(encoding = "UTF-8")
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = {Application.class})
 public abstract class IntegrationTest extends AbstractTest {
 
   /**

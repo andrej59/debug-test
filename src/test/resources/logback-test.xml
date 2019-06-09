@@ -1,12 +1,12 @@
 <configuration>
-  <appender userName="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <target>System.out</target>
     <encoder>
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M:%L - %m%n</pattern>
     </encoder>
   </appender>
 
-  <!--<logger userName="org.springframework" level="WARN"/>-->
+  <!--<logger name="org.springframework" level="WARN"/>-->
 
   <root level="INFO">
     <appender-ref ref="STDOUT"/>

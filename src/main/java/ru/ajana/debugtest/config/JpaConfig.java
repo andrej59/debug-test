@@ -3,6 +3,8 @@ package ru.ajana.debugtest.config;
 import java.util.Collections;
 import java.util.Map;
 import javax.sql.DataSource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration;
@@ -24,11 +26,16 @@ import org.springframework.transaction.jta.JtaTransactionManager;
 @EnableJpaRepositories(basePackages = {"ru.ajana.debugtest.repository"})
 public class JpaConfig extends JpaBaseConfiguration {
 
+  private static Logger LOG = LoggerFactory.getLogger(JpaConfig.class);
+
+
   public JpaConfig(DataSource dataSource,
       JpaProperties properties,
       ObjectProvider<JtaTransactionManager> jtaTransactionManager,
       ObjectProvider<TransactionManagerCustomizers> transactionManagerCustomizers) {
     super(dataSource, properties, jtaTransactionManager, transactionManagerCustomizers);
+
+    LOG.info("JpaProperties: {}", properties);
   }
 
   @Override
