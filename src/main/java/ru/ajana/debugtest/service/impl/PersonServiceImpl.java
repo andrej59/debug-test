@@ -59,17 +59,20 @@ public class PersonServiceImpl implements PersonService {
    */
   @Override
   public Person create(Person person) {
+    // Проверяем
     checkPerson(person);
 
+    // Сохраняем
     PersonEntity personEntity = personRepository.save(personMapper.mapFrom(person));
     person.setId(personEntity.getId());
     return person;
   }
 
   /**
-   * Сложный алгоритм проверки.
+   * Метод со сложным алгоритмом проверки ФЛ.
    *
-   * @param person объект ФЛ для проверки.
+   * @param person объект ФЛ
+   * @return {@code true} проверка прошла успешно, false - нет
    */
   private boolean checkPerson(Person person) {
     Objects.requireNonNull(person, "The argument person must not be null");
