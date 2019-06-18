@@ -1,5 +1,6 @@
 package ru.ajana.debugtest.mapping;
 
+import java.time.LocalDateTime;
 import org.springframework.stereotype.Component;
 import ru.ajana.debugtest.jpa.entity.PersonEntity;
 import ru.ajana.debugtest.model.Person;
@@ -31,6 +32,7 @@ public class PersonMapper implements Mapper<PersonEntity, Person> {
     entity.setFirstName(person.getFirstName());
     entity.setBirthDate(person.getBirthDate());
     entity.setEmail(person.getEmail());
+    entity.setCreateDate(LocalDateTime.now());
     return entity;
   }
 }

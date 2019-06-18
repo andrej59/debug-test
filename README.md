@@ -6,5 +6,5 @@ mvn clean package
 ```
 ## Запуск тестов
 ```
-mvn clean install -Denv=test 
+mvn clean install -Denv=test
 ```

@@ -18,16 +18,18 @@ import ru.ajana.debugtest.model.Person;
  */
 public class PersonControllerDT extends DebugTest {
 
+
+  /**
+   * Успешный тест создания ФЛ.
+   */
   @Test
-  public void testCreatePerson() {
+  public void testValidCreatePerson() {
     ParameterizedTypeReference refType = new ParameterizedTypeReference<Person>() {
     };
     // Создаём объект ФЛ
     Person person = createPerson();
-
     // Отправляем запрос на сервис
     ResponseEntity<Person> response = post("/persons", person, refType);
-
     // Получили ответ
     Person newPerson = response.getBody();
 
@@ -36,6 +38,26 @@ public class PersonControllerDT extends DebugTest {
     assertTrue(newPerson.getId() > 0);
   }
 
+  /**
+   * Не успешный тест создания ФЛ
+   */
+  @Test
+  public void testInvalidCreatePerson() {
+    ParameterizedTypeReference refType = new ParameterizedTypeReference<Person>() {
+    };
+    // Создаём объект ФЛ
+    Person person = createPerson();
+    // Отчество не указано
+    person.setMiddleName(null);
+    // Отправляем запрос на сервис
+    ResponseEntity<Person> response = post("/persons", person, refType);
+    // Получили ответ
+    Person newPerson = response.getBody();
+
+    // Делаем проверку
+    assertEquals(response.getStatusCode(), HttpStatus.CREATED);
+    assertTrue(newPerson.getId() > 0);
+  }
 
   /**
    * Создаёт эталонный объект ФЛ для тестирования.
@@ -44,9 +66,10 @@ public class PersonControllerDT extends DebugTest {
    */
   private Person createPerson() {
     Person person = new Person();
+    person.setId(123L);
     person.setLastName("Тестов");
     person.setFirstName("Иван");
-    //person.setMiddleName("Петрович");
+    person.setMiddleName("Петрович");
     person.setEmail("test@mail.ru");
     person.setBirthDate(LocalDate.of(1980, 01, 01));
     return person;
