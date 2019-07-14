@@ -5,6 +5,6 @@ package ru.ajana.debugtest;
  *
  * @author Andrey Kharintsev on 09.06.2019
  */
-public abstract class DebugTest extends IntegrationTest {
+public abstract class AbstractDebugTest extends AbstractIntegrationTest {
 
 }

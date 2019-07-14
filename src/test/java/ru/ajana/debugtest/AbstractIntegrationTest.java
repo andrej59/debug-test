@@ -38,7 +38,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @SqlConfig(encoding = "UTF-8")
 @ContextConfiguration(classes = {Application.class})
-public abstract class IntegrationTest extends AbstractTest {
+public abstract class AbstractIntegrationTest extends AbstractTest {
 
   /**
    * Таймаут на чтение данных REST-клиента.

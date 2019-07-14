@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import ru.ajana.debugtest.DebugTest;
+import ru.ajana.debugtest.AbstractDebugTest;
 import ru.ajana.debugtest.model.Person;
 
 /**
@@ -16,7 +16,7 @@ import ru.ajana.debugtest.model.Person;
  *
  * @author Andrey Kharintsev on 09.06.2019
  */
-public class PersonControllerDT extends DebugTest {
+public class PersonControllerDT extends AbstractDebugTest {
 
 
   /**

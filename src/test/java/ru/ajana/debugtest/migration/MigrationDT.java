@@ -3,14 +3,14 @@ package ru.ajana.debugtest.migration;
 import org.flywaydb.core.Flyway;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import ru.ajana.debugtest.DebugTest;
+import ru.ajana.debugtest.AbstractDebugTest;
 
 /**
  * Отладочный тест для тестирования миграций базы данных.
  *
  * @author Andrey Kharintsev on 09.06.2019
  */
-public class MigrationDT extends DebugTest {
+public class MigrationDT extends AbstractDebugTest {
 
   @Autowired
   private Flyway flyway;
