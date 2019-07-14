@@ -98,12 +98,12 @@ public class Person {
       return false;
     }
     Person person = (Person) o;
-    return Objects.equals(id, person.id) &&
-        Objects.equals(lastName, person.lastName) &&
-        Objects.equals(firstName, person.firstName) &&
-        Objects.equals(middleName, person.middleName) &&
-        Objects.equals(birthDate, person.birthDate) &&
-        Objects.equals(email, person.email);
+    return Objects.equals(id, person.id)
+        && Objects.equals(lastName, person.lastName)
+        && Objects.equals(firstName, person.firstName)
+        && Objects.equals(middleName, person.middleName)
+        && Objects.equals(birthDate, person.birthDate)
+        && Objects.equals(email, person.email);
   }
 
   @Override

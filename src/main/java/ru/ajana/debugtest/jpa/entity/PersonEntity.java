@@ -135,14 +135,14 @@ public class PersonEntity {
       return false;
     }
     PersonEntity that = (PersonEntity) o;
-    return Objects.equals(id, that.id) &&
-        Objects.equals(lastName, that.lastName) &&
-        Objects.equals(firstName, that.firstName) &&
-        Objects.equals(middleName, that.middleName) &&
-        Objects.equals(birthDate, that.birthDate) &&
-        Objects.equals(email, that.email) &&
-        Objects.equals(createDate, that.createDate) &&
-        Objects.equals(updateDate, that.updateDate);
+    return Objects.equals(id, that.id)
+        && Objects.equals(lastName, that.lastName)
+        && Objects.equals(firstName, that.firstName)
+        && Objects.equals(middleName, that.middleName)
+        && Objects.equals(birthDate, that.birthDate)
+        && Objects.equals(email, that.email)
+        && Objects.equals(createDate, that.createDate)
+        && Objects.equals(updateDate, that.updateDate);
   }
 
   @Override

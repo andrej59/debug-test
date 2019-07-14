@@ -28,13 +28,18 @@ public class JpaConfig extends JpaBaseConfiguration {
 
   private static Logger LOG = LoggerFactory.getLogger(JpaConfig.class);
 
-
+  /**
+   * Конструктор конфигурации JPA.
+   * @param dataSource источник данныз
+   * @param properties свойства
+   * @param jtaTransactionManager провайдер TransactionManager
+   * @param transactionManagerCustomizers настроенный провайдер TransactionManager
+   */
   public JpaConfig(DataSource dataSource,
       JpaProperties properties,
       ObjectProvider<JtaTransactionManager> jtaTransactionManager,
       ObjectProvider<TransactionManagerCustomizers> transactionManagerCustomizers) {
     super(dataSource, properties, jtaTransactionManager, transactionManagerCustomizers);
-
     LOG.info("JpaProperties: {}", properties);
   }
 

@@ -175,15 +175,15 @@ public abstract class AbstractIntegrationTest extends AbstractTest {
   /**
    * Http-запрос отправляемы методом POST.
    *
-   * @param path          path относительный путь по отношению к базовому URI
+   * @param path path относительный путь по отношению к базовому URI
    * @param requestEntity Http-сущность запроса
-   * @param responseType  возвращаемый класс данных
-   * @param urlVariables  передаваемые параметры
+   * @param responseType возвращаемый класс данных
+   * @param urlVariables передаваемые параметры
    * @return результат запроса
    */
   protected <T> ResponseEntity<T> post(String path, Object requestEntity,
-                                       Class<T> responseType,
-                                       Object... urlVariables) {
+      Class<T> responseType,
+      Object... urlVariables) {
     return send(HttpMethod.POST, path, requestEntity, responseType, urlVariables);
   }
 
@@ -205,15 +205,15 @@ public abstract class AbstractIntegrationTest extends AbstractTest {
   /**
    * Http-запрос отправляемы методом PUT.
    *
-   * @param path          path относительный путь по отношению к базовому URI
+   * @param path path относительный путь по отношению к базовому URI
    * @param requestEntity Http-сущность запроса
-   * @param responseType  возвращаемый класс данных
-   * @param urlVariables  передаваемые параметры
+   * @param responseType возвращаемый класс данных
+   * @param urlVariables передаваемые параметры
    * @return результат запроса
    */
   protected <T> ResponseEntity<T> put(String path, Object requestEntity,
-                                      Class<T> responseType,
-                                      Object... urlVariables) {
+      Class<T> responseType,
+      Object... urlVariables) {
     return send(HttpMethod.PUT, path, requestEntity, responseType, urlVariables);
   }
 
@@ -250,20 +250,20 @@ public abstract class AbstractIntegrationTest extends AbstractTest {
   /**
    * Общий метод отправляющий Http-запрос.
    *
-   * @param method        Http-метод
-   * @param path          относительный путь
+   * @param method Http-метод
+   * @param path относительный путь
    * @param requestEntity Http-сущность запроса
-   * @param responseType  возвращаемый класс данных
-   * @param urlVariables  передаваемые параметры
-   * @param <T>           возвращаемый тип данных
+   * @param responseType возвращаемый класс данных
+   * @param urlVariables передаваемые параметры
+   * @param <T> возвращаемый тип данных
    * @return результат запроса
    */
   protected <T> ResponseEntity<T> send(HttpMethod method, String path, Object requestEntity,
-                                       Class<T> responseType,
-                                       Object... urlVariables) {
+      Class<T> responseType,
+      Object... urlVariables) {
     return getClient()
-            .exchange(getBaseURI() + path, method, buildRequestWithParameters(requestEntity),
-                    responseType, urlVariables);
+        .exchange(getBaseURI() + path, method, buildRequestWithParameters(requestEntity),
+            responseType, urlVariables);
   }
 
   /**

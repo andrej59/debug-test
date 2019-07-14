@@ -23,8 +23,9 @@ public class PersonServiceImpl implements PersonService {
    * Маппинг ФЛ.
    */
   private final Mapper<PersonEntity, Person> personMapper;
+
   /**
-   * Репозиторий ФЛ,
+   * Репозиторий ФЛ.
    */
   private final PersonRepository personRepository;
 
