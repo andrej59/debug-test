@@ -3,7 +3,6 @@ package ru.ajana.debugtest.web.controller;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,7 @@ import ru.ajana.debugtest.model.Person;
  *
  * @author Andrey Kharintsev on 09.06.2019
  */
-@Slf4j
+
 public class PersonControllerDT extends AbstractDebugTest {
 
   /**
@@ -33,7 +32,7 @@ public class PersonControllerDT extends AbstractDebugTest {
     // Делаем проверку
     assertEquals(response.getStatusCode(), HttpStatus.CREATED);
     assertTrue(newPerson.getId() > 0);
-    log.info("Физическон лицо успешно создано");
+    LOG.info("Физическон лицо успешно создано");
   }
 
   /**

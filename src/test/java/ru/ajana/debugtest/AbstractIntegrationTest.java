@@ -6,6 +6,8 @@ import java.util.List;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
@@ -39,6 +41,11 @@ import org.springframework.web.client.RestTemplate;
 @SqlConfig(encoding = "UTF-8")
 @ContextConfiguration(classes = {Application.class})
 public abstract class AbstractIntegrationTest extends AbstractTest {
+
+  /**
+   * Логгер.
+   */
+  protected final Logger LOG = LoggerFactory.getLogger(getClass());
 
   /**
    * Таймаут на чтение данных REST-клиента.
