@@ -110,4 +110,16 @@ public class Person {
   public int hashCode() {
     return Objects.hash(id);
   }
+
+  @Override
+  public String toString() {
+    return "Person{" +
+        "id=" + id +
+        ", lastName='" + lastName + '\'' +
+        ", firstName='" + firstName + '\'' +
+        ", middleName='" + middleName + '\'' +
+        ", birthDate=" + birthDate +
+        ", email='" + email + '\'' +
+        '}';
+  }
 }

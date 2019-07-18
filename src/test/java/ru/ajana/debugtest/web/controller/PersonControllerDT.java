@@ -31,11 +31,7 @@ public class PersonControllerDT extends AbstractDebugTest {
     ResponseEntity<Person> response = post("/persons", person, Person.class);
     // Получили ответ
     Person newPerson = response.getBody();
-
-    // Делаем проверку
-    assertEquals("При создании физического лица произошла ошибка",
-        response.getStatusCode(), HttpStatus.CREATED);
-    assertTrue(newPerson.getId() > 0);
+    LOG.info("result: " + newPerson);
   }
 
   /**
