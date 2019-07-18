@@ -5,9 +5,9 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ru.ajana.debugtest.jpa.entity.PersonEntity;
+import ru.ajana.debugtest.model.entity.PersonEntity;
 import ru.ajana.debugtest.mapping.Mapper;
-import ru.ajana.debugtest.model.Person;
+import ru.ajana.debugtest.model.dto.Person;
 import ru.ajana.debugtest.repository.PersonRepository;
 import ru.ajana.debugtest.service.PersonService;
 

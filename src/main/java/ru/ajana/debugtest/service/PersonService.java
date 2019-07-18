@@ -1,7 +1,7 @@
 package ru.ajana.debugtest.service;
 
 import java.util.List;
-import ru.ajana.debugtest.model.Person;
+import ru.ajana.debugtest.model.dto.Person;
 
 /**
  * Интерфейс сервис для работы с физическим лицом (ФЛ).

@@ -22,7 +22,7 @@ import org.springframework.transaction.jta.JtaTransactionManager;
  * @author Andrey Kharintsev on 08.06.2019
  */
 @Configuration
-@EntityScan(basePackages = {"ru.ajana.debugtest.jpa.entity"})
+@EntityScan(basePackages = {"ru.ajana.debugtest.model.entity"})
 @EnableJpaRepositories(basePackages = {"ru.ajana.debugtest.repository"})
 public class JpaConfig extends JpaBaseConfiguration {
 

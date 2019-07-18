@@ -1,7 +1,7 @@
 package ru.ajana.debugtest;
 
 import java.time.LocalDate;
-import ru.ajana.debugtest.model.Person;
+import ru.ajana.debugtest.model.dto.Person;
 
 /**
  * Обстрактный класс теста.

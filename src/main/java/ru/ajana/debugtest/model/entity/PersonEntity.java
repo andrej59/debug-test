@@ -1,4 +1,4 @@
-package ru.ajana.debugtest.jpa.entity;
+package ru.ajana.debugtest.model.entity;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

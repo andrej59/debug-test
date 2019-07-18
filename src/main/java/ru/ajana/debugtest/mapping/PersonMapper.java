@@ -2,8 +2,8 @@ package ru.ajana.debugtest.mapping;
 
 import java.time.LocalDateTime;
 import org.springframework.stereotype.Component;
-import ru.ajana.debugtest.jpa.entity.PersonEntity;
-import ru.ajana.debugtest.model.Person;
+import ru.ajana.debugtest.model.entity.PersonEntity;
+import ru.ajana.debugtest.model.dto.Person;
 
 /**
  * Маппер физического лица.

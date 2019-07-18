@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import ru.ajana.debugtest.AbstractDebugTest;
-import ru.ajana.debugtest.model.Person;
+import ru.ajana.debugtest.model.dto.Person;
 
 /**
  * Тест отладки контроллера физического лица.
@@ -16,24 +16,6 @@ import ru.ajana.debugtest.model.Person;
  */
 
 public class PersonControllerDT extends AbstractDebugTest {
-
-  /**
-   * Успешный тест создания физического лица (ФЛ).
-   */
-  @Test
-  public void testValidCreatePerson() {
-    // Создаём объект ФЛ
-    Person person = createPerson();
-    // Отправляем запрос на сервис
-    ResponseEntity<Person> response = post("/persons", person, Person.class);
-    // Получили ответ
-    Person newPerson = response.getBody();
-
-    // Делаем проверку
-    assertEquals(response.getStatusCode(), HttpStatus.CREATED);
-    assertTrue(newPerson.getId() > 0);
-    LOG.info("Физическон лицо успешно создано");
-  }
 
   /**
    * Не успешный тест создания физического лица (ФЛ).
@@ -54,5 +36,23 @@ public class PersonControllerDT extends AbstractDebugTest {
     assertEquals("При создании физического лица произошла ошибка",
         response.getStatusCode(), HttpStatus.CREATED);
     assertTrue(newPerson.getId() > 0);
+  }
+
+  /**
+   * Успешный тест создания физического лица (ФЛ).
+   */
+  @Test
+  public void testValidCreatePerson() {
+    // Создаём объект ФЛ
+    Person person = createPerson();
+    // Отправляем запрос на сервис
+    ResponseEntity<Person> response = post("/persons", person, Person.class);
+    // Получили ответ
+    Person newPerson = response.getBody();
+
+    // Делаем проверку
+    assertEquals(response.getStatusCode(), HttpStatus.CREATED);
+    assertTrue(newPerson.getId() > 0);
+    LOG.info("Физическон лицо успешно создано");
   }
 }

@@ -2,7 +2,7 @@ package ru.ajana.debugtest.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.ajana.debugtest.jpa.entity.PersonEntity;
+import ru.ajana.debugtest.model.entity.PersonEntity;
 
 /**
  * Репозиторий физического лица.
