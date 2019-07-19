@@ -32,6 +32,7 @@ public class PersonControllerDT extends AbstractDebugTest {
     // Получили ответ
     Person newPerson = response.getBody();
     LOG.info("result: " + newPerson);
+    assertTrue(newPerson.getId() > 0);
   }
 
   /**
